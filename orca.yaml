@@ -1,0 +1,10 @@
+scripts:
+  setup: |
+    test -e node_modules || npm install
+    echo "Tabby worktree ready. The dev server tab runs npm run dev."
+worktree:
+  sharedDirectories:
+    - node_modules
+defaultTabs:
+  - title: dev server
+    command: npm run dev

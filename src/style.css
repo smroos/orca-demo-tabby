@@ -1,0 +1,255 @@
+:root {
+  --paper: #f6f1e7;
+  --card: #fffdf8;
+  --ink: #1f2a2e;
+  --muted: #5a676c;
+  --line: #e2dccd;
+  --teal: #0f5f62;
+  --teal-deep: #0a4749;
+  --teal-soft: #dcecea;
+  --amber: #e0892b;
+  --focus: #b8620f;
+  --radius: 14px;
+  --shadow: 0 1px 2px rgba(31, 42, 46, 0.06), 0 8px 24px rgba(31, 42, 46, 0.06);
+  font-family: ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  color: var(--ink);
+  background: var(--paper);
+  line-height: 1.4;
+  -webkit-font-smoothing: antialiased;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background:
+    radial-gradient(900px 400px at 50% -120px, #fbe6c4 0%, rgba(251, 230, 196, 0) 70%),
+    var(--paper);
+}
+
+.shell {
+  width: 100%;
+  max-width: 480px;
+  margin: 0 auto;
+  padding: 40px 20px 32px;
+}
+
+.header {
+  margin-bottom: 24px;
+}
+
+.brand {
+  margin: 0;
+  font-size: 2rem;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  color: var(--teal);
+}
+
+.tagline {
+  margin: 4px 0 0;
+  color: var(--muted);
+  font-size: 1rem;
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.card {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+
+.form {
+  padding: 22px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.label {
+  font-size: 0.8125rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.input {
+  font: inherit;
+  color: var(--ink);
+  background: #fff;
+  border: 1.5px solid var(--line);
+  border-radius: 10px;
+  padding: 11px 12px;
+  width: 100%;
+  min-width: 0;
+}
+
+.input:hover {
+  border-color: #cfc7b4;
+}
+
+.money {
+  position: relative;
+}
+
+.money-symbol {
+  position: absolute;
+  left: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--muted);
+  font-weight: 600;
+}
+
+.money-input {
+  padding-left: 30px;
+  font-size: 1.125rem;
+  font-variant-numeric: tabular-nums;
+}
+
+.segmented {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 6px;
+  padding: 4px;
+  background: #efe9da;
+  border-radius: 12px;
+}
+
+.segment {
+  font: inherit;
+  font-weight: 600;
+  color: var(--ink);
+  background: transparent;
+  border: 0;
+  border-radius: 9px;
+  padding: 10px 0;
+  cursor: pointer;
+  transition: background 120ms ease, color 120ms ease;
+}
+
+.segment:hover {
+  background: rgba(255, 255, 255, 0.7);
+}
+
+.segment[aria-pressed='true'] {
+  background: var(--teal);
+  color: #fff;
+  box-shadow: 0 1px 2px rgba(10, 71, 73, 0.3);
+}
+
+.stepper {
+  display: grid;
+  grid-template-columns: 48px 1fr 48px;
+  gap: 8px;
+  align-items: stretch;
+}
+
+.step {
+  font: inherit;
+  font-size: 1.375rem;
+  font-weight: 600;
+  line-height: 1;
+  color: var(--teal);
+  background: var(--teal-soft);
+  border: 0;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background 120ms ease;
+}
+
+.step:hover:not(:disabled) {
+  background: #c9e1de;
+}
+
+.step:disabled {
+  color: #9aa7aa;
+  background: #eceae2;
+  cursor: not-allowed;
+}
+
+.people-input {
+  text-align: center;
+  font-size: 1.125rem;
+  font-variant-numeric: tabular-nums;
+  appearance: textfield;
+  -moz-appearance: textfield;
+}
+
+.people-input::-webkit-outer-spin-button,
+.people-input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.input:focus-visible,
+.segment:focus-visible,
+.step:focus-visible {
+  outline: 3px solid var(--focus);
+  outline-offset: 2px;
+}
+
+.result {
+  width: 440px;
+  padding: 24px 22px;
+  background: var(--teal);
+  border-color: var(--teal-deep);
+  color: #fff;
+}
+
+.result-label {
+  margin: 0;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: #bfdcd9;
+}
+
+.amount {
+  margin: 6px 0 10px;
+  font-size: 4.5rem;
+  font-weight: 800;
+  letter-spacing: -0.04em;
+  line-height: 1.05;
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+
+.total {
+  margin: 0;
+  font-size: 0.9375rem;
+  color: #d6ebe8;
+}
+
+.total span {
+  font-weight: 700;
+  color: #fff;
+}
+
+.footer {
+  margin-top: 24px;
+  font-size: 0.8125rem;
+  color: var(--muted);
+}
+
+.env {
+  font-weight: 600;
+  color: var(--ink);
+}

@@ -1,0 +1,23 @@
+{
+  "name": "tabby",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "A small bill splitter.",
+  "license": "MIT",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc --noEmit && vite build",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run",
+    "test:acceptance": "bash scripts/acceptance.sh"
+  },
+  "devDependencies": {
+    "typescript": "^7.0.2",
+    "vite": "^8.3.4",
+    "vitest": "^5.0.3"
+  }
+}
