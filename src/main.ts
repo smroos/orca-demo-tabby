@@ -18,6 +18,7 @@ const state = {
 };
 
 const env = import.meta.env.VITE_TABBY_ENV || 'not set';
+const lane = import.meta.env.VITE_TABBY_LANE || '';
 
 const app = document.querySelector<HTMLDivElement>('#app')!;
 
@@ -69,7 +70,7 @@ app.innerHTML = `
       </section>
     </main>
 
-    <footer class="footer">Environment: <span class="env" id="env"></span></footer>
+    <footer class="footer">Environment: <span class="env" id="env"></span><span class="lane" id="lane-wrap" hidden> · Lane: <span class="env" id="lane"></span></span></footer>
   </div>
 `;
 
@@ -81,6 +82,10 @@ const segments = app.querySelectorAll<HTMLButtonElement>('.segment');
 const amountEl = app.querySelector<HTMLElement>('#amount')!;
 const totalEl = app.querySelector<HTMLElement>('#total')!;
 app.querySelector<HTMLElement>('#env')!.textContent = env;
+if (lane) {
+  app.querySelector<HTMLElement>('#lane')!.textContent = lane;
+  app.querySelector<HTMLElement>('#lane-wrap')!.hidden = false;
+}
 
 function billCents(): number {
   const parsed = Number.parseFloat(state.bill);
